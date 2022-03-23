@@ -2,13 +2,13 @@ const mongoose = require('mongoose')
 
 const TracksSchema = new mongoose.Schema({
     name: {
-        type: 'string',
+        type: String,
     },
     album: {
-        type: 'number',
+        type: String,
     },
     cover: {
-        type: 'string',
+        type: String,
         validate: {
             validator: (req) => {
                 return true;
@@ -18,21 +18,21 @@ const TracksSchema = new mongoose.Schema({
     },
     artist: {
         name: {
-            type: 'string',
+            type: String,
         },
         nickname: {
-            type: 'string',
+            type: String,
         },
         nationality: {
-            type: 'string',
+            type: String,
         },
     },
     duration: {
         start: {
-            type: number,
+            type: Number,
         },
         end: {
-            type: number,
+            type: Number,
         },
     },
     mediaId: {

@@ -2,10 +2,10 @@ const mongoose = require('mongoose')
 
 const StorageSchema = new mongoose.Schema({
     url: {
-        type: 'string',
+        type: String,
     },
     filename: {
-        type: 'string',
+        type: String,
     }
 }, {
     timestamps: true, //TODO sive para controlar las fechas de cracion y actualizacion createdAT, updateAT
