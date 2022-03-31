@@ -2,7 +2,8 @@ const express = require('express')
 const router = express.Router();
 
 const { validatorCreateItem, validatorGetItem } = require("../validators/tracks")
-const { getItems, createItem, getItem, updateItem, deleteItem } = require('../controllers/tracks')
+const { getItems, createItem, getItem, updateItem, deleteItem } = require('../controllers/tracks');
+const authMiddleware = require('../middleware/session');
 
 //Todo http://localhost/tracks GET, POST, DELETE, PUT
 //? siempre comillas dobles
@@ -10,7 +11,7 @@ const { getItems, createItem, getItem, updateItem, deleteItem } = require('../co
 /**
  *  Lista los items
  */
-router.get("/", getItems);
+router.get("/", authMiddleware, getItems);
 /**
  *  Crea los items
  */
