@@ -1,4 +1,6 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const mongooseDelete = require('mongoose-delete');
+
 
 const TracksSchema = new mongoose.Schema({
     name: {
@@ -44,6 +46,9 @@ const TracksSchema = new mongoose.Schema({
     versionKey: false,
 })
 
+
+
+TracksSchema.plugin(mongooseDelete, { overrideMethods: "all" });
 
 //? asi creamos el documento en mongo
 module.exports = mongoose.model('tracks', TracksSchema)

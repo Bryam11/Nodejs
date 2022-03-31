@@ -4,6 +4,7 @@ const storage = multer.diskStorage({
     destination: function(req, file, cb) {
         //? el __dirname sirve para indicar en donde estoy
         const pathStorage = `${__dirname}/../storage`;
+        //const pathStorage = "https://drive.google.com/drive/u/1/folders/1_Ztt3zcApFYFByUuwBCC0FMXDiIoP5YS"
         cb(null, pathStorage);
     },
     filename: function(req, file, cb) {

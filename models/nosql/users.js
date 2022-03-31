@@ -1,4 +1,5 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const mongooseDelete = require('mongoose-delete');
 
 const UserSchema = new mongoose.Schema({
     name: {
@@ -23,6 +24,8 @@ const UserSchema = new mongoose.Schema({
     versionKey: false,
 })
 
+
+UserSchema.plugin(mongooseDelete, { overrideMethods: "all" });
 
 //? asi creamos el documento en mongo
 module.exports = mongoose.model('users', UserSchema)
